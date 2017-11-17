@@ -27,4 +27,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.0'
     testCompile 'junit:junit:4.12'
     compile files('src/main/libs/jxl-2.6.9.jar')
+    compile "android.arch.persistence.room:runtime:1.0.0"
 }
