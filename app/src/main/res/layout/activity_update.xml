@@ -15,11 +15,11 @@
             android:orientation="horizontal">
             <TextView
                 style="@style/text_info"
-                android:text="发货人："/>
+                android:text="状态："/>
             <EditText
-                android:id="@+id/sender"
+                android:id="@+id/state"
                 style="@style/edit_text"
-                android:hint="发货人" />
+                android:hint="状态" />
 
         </LinearLayout>
 
@@ -33,7 +33,7 @@
             <EditText
                 android:id="@+id/date"
                 style="@style/edit_text"
-                android:hint="日期" />
+                android:hint="日期"/>
 
         </LinearLayout>
         <LinearLayout
@@ -56,11 +56,11 @@
             android:orientation="horizontal">
             <TextView
                 style="@style/text_info"
-                android:text="收件人地址："/>
+                android:text="发货人收件人地址、电话："/>
             <EditText
                 android:id="@+id/address"
                 style="@style/edit_text"
-                android:hint="收件人地址" />
+                android:hint="发货人收件人地址、电话" />
 
         </LinearLayout>
         <LinearLayout
@@ -69,24 +69,24 @@
             android:orientation="horizontal">
             <TextView
                 style="@style/text_info"
-                android:text="电话："/>
+                android:text="退货地址："/>
             <EditText
-                android:id="@+id/tel"
+                android:id="@+id/tui_address"
                 style="@style/edit_text"
-                android:hint="电话" />
+                android:hint="退货地址" />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                style="@style/text_info"
-                android:text="快递："/>
-            <EditText
-                android:id="@+id/express"
-                style="@style/edit_text"
-                android:hint="快递" />
-        </LinearLayout>
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+            <!--<TextView-->
+                <!--style="@style/text_info"-->
+                <!--android:text="快递："/>-->
+            <!--<EditText-->
+                <!--android:id="@+id/express"-->
+                <!--style="@style/edit_text"-->
+                <!--android:hint="快递" />-->
+        <!--</LinearLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -102,20 +102,20 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                style="@style/text_info"
-                android:text="备注："/>
-            <EditText
-                android:id="@+id/remark"
-                style="@style/edit_text"
-                android:hint="备注" />
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+            <!--<TextView-->
+                <!--style="@style/text_info"-->
+                <!--android:text="备注："/>-->
+            <!--<EditText-->
+                <!--android:id="@+id/remark"-->
+                <!--style="@style/edit_text"-->
+                <!--android:hint="备注" />-->
 
 
-        </LinearLayout>
+        <!--</LinearLayout>-->
 
 
         <ImageView

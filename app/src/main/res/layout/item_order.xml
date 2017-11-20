@@ -21,25 +21,19 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_send_man"
+            android:id="@+id/tv_state"
             style="@style/text_info"
-            android:text="发货人：李四" />
+            android:text="状态：xxx" />
 
-        <TextView
-            android:id="@+id/tv_kuaidi"
-            style="@style/text_info"
-            android:text="快递：中通" />
+        <!--<TextView-->
+            <!--android:id="@+id/tv_kuaidi"-->
+            <!--style="@style/text_info"-->
+            <!--android:text="快递：中通" />-->
 
         <TextView
             android:id="@+id/tv_size"
             style="@style/text_info"
             android:text="尺码：38" />
-
-        <TextView
-            android:id="@+id/tv_number"
-            style="@style/text_info"
-            android:text="订单编号：123123123" />
-
         <TextView
             android:id="@+id/tv_date"
             style="@style/text_info"
@@ -48,17 +42,27 @@
         <TextView
             android:id="@+id/tv_address"
             style="@style/text_info"
-            android:text="地址：上海市；阿斯蒂芬" />
+            android:text="地址、电话：上海市xxxxx" />
 
         <TextView
-            android:id="@+id/tv_phone"
+            android:id="@+id/tv_tuiaddress"
             style="@style/text_info"
-            android:text="电话：123123123" />
-
+            android:text="退货地址：xxxxx" />
         <TextView
-            android:id="@+id/tv_ps"
+            android:id="@+id/tv_number"
             style="@style/text_info"
-            android:text="备注：" />
+            android:text="订单编号：123123123" />
+
+
+
+
+
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_ps"-->
+            <!--style="@style/text_info"-->
+            <!--android:text="备注：" />-->
     </LinearLayout>
 
 </LinearLayout>

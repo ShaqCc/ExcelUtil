@@ -38,13 +38,13 @@ public class UpdateActivity extends AppCompatActivity {
 
         helper = new InfoHelper(UpdateActivity.this);
 
-        final EditText sender = (EditText) findViewById(R.id.sender);
+        final EditText state = (EditText) findViewById(R.id.state);
         final EditText date = (EditText) findViewById(R.id.date);
         final EditText size = (EditText) findViewById(R.id.size);
         final EditText address = (EditText) findViewById(R.id.address);
-        final EditText tel = (EditText) findViewById(R.id.tel);
-        final EditText express = (EditText) findViewById(R.id.express);
-        final EditText remark = (EditText) findViewById(R.id.remark);
+        final EditText tui_address = (EditText) findViewById(R.id.tui_address);
+//        final EditText express = (EditText) findViewById(R.id.express);
+//        final EditText remark = (EditText) findViewById(R.id.remark);
         final EditText number = (EditText) findViewById(R.id.number);
         image = (ImageView) findViewById(R.id.iv_pic);
         bt_delete = (Button) findViewById(R.id.delete);
@@ -59,13 +59,13 @@ public class UpdateActivity extends AppCompatActivity {
         });
         //setdata
         if (mOrder != null) {
-            sender.setText(mOrder.getSender());
+            state.setText(mOrder.getState());
             date.setText(mOrder.getDate());
             size.setText(mOrder.getSize());
             address.setText(mOrder.getAddress());
-            tel.setText(mOrder.getTel());
-            express.setText(mOrder.getExpress());
-            remark.setText(mOrder.getRemark());
+            tui_address.setText(mOrder.getTuiAddress());
+//            express.setText(mOrder.getExpress());
+//            remark.setText(mOrder.getRemark());
             number.setText(mOrder.getNumber());
             bt_delete.setVisibility(View.VISIBLE);
         }else {
@@ -84,14 +84,15 @@ public class UpdateActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Info info = new Info();
-                info.setAddress(address.getText().toString());
+                info.setState(state.getText().toString());
                 info.setDate(date.getText().toString());
-                info.setExpress(express.getText().toString());
-                info.setNumber(number.getText().toString());
-                info.setRemark(remark.getText().toString());
-                info.setSender(sender.getText().toString());
                 info.setSize(size.getText().toString());
-                info.setTel(tel.getText().toString());
+                info.setAddress(address.getText().toString());
+                info.setTuiAddress(tui_address.getText().toString());
+                info.setNumber(number.getText().toString());
+//                info.setRemark(remark.getText().toString());
+//                info.setSender(sender.getText().toString());
+//                info.setTel(tel.getText().toString());
                 if (mResults != null && mResults.size() > 0) {
                     info.setImage(FileUtils.getBytes(mResults.get(0)));
                 }

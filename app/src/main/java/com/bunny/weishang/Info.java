@@ -5,31 +5,52 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import java.io.Serializable;
+
 /**
  * Created by Administrator on 2017/11/19.
  */
 @DatabaseTable(tableName = "info_table")
 public class Info implements Serializable {
-        @DatabaseField(generatedId = true)//id为主键 
-        private int id;
-        @DatabaseField(columnName = "date")
-        private String date;
-        @DatabaseField(columnName = "size")
-        private String size;
-        @DatabaseField(columnName = "address")
-        private String address;
-        @DatabaseField(columnName = "tel")
-        private String tel;
-        @DatabaseField(columnName = "sender")
-        private String sender;
-        @DatabaseField(columnName = "number")
-        private String number;
-        @DatabaseField(columnName = "remark")
-        private String remark;
-        @DatabaseField(columnName = "express")
-        private String express;
-        @DatabaseField(columnName = "image",dataType = DataType.BYTE_ARRAY)
-        private byte[] image;
+    @DatabaseField(generatedId = true)//id为主键
+    private int id;
+    @DatabaseField(columnName = "date")
+    private String date;
+    @DatabaseField(columnName = "size")
+    private String size;
+    @DatabaseField(columnName = "address")
+    private String address;
+    @DatabaseField(columnName = "tel")
+    private String tel;
+    @DatabaseField(columnName = "sender")
+    private String sender;
+    @DatabaseField(columnName = "number")
+    private String number;
+    @DatabaseField(columnName = "remark")
+    private String remark;
+    @DatabaseField(columnName = "express")
+    private String express;
+    @DatabaseField(columnName = "image", dataType = DataType.BYTE_ARRAY)
+    private byte[] image;
+    @DatabaseField(columnName = "state")
+    private String state;
+    @DatabaseField(columnName = "tuiAddress")
+    private String tuiAddress;
+
+    public String getTuiAddress() {
+        return tuiAddress;
+    }
+
+    public void setTuiAddress(String tuiAddress) {
+        this.tuiAddress = tuiAddress;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
 
     public byte[] getImage() {
         return image;
@@ -53,9 +74,9 @@ public class Info implements Serializable {
                 ", express='" + express + '\'' +
                 '}';
     }
-    
-        public Info() {
-        }
+
+    public Info() {
+    }
 
     public String getDate() {
         return date;

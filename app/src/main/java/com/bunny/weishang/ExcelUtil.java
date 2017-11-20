@@ -46,9 +46,9 @@ public class ExcelUtil {
             Toast.makeText(context, "SD卡不可用", Toast.LENGTH_LONG).show();
             return;
         }
-        //日期	鞋款图片	尺码	发货人	收件人地址、电话	快递	备注	运单编号
+        //鞋款图片	状态	快递运单编号 尺码	发货人收件人地址、电话	快递运单编号	退换地址
 
-        String[] title = {"日期", "鞋款图片", "尺码", "发货人", "收件人地址", "电话", "快递", "备注", "运单编号"};
+        String[] title = {"日期","鞋款图片", "状态", "尺码", "发货人收件人地址、电话", "快递运单编号", "退换地址"};
         File file;
         Log.d("xxx", root);
         file = new File(root, fileName + ".xls");
@@ -72,30 +72,39 @@ public class ExcelUtil {
             sheet.addCell(label);
         }
         WritableCellFormat commonFormat = getCommonFormat();
-        ////日期	鞋款图片	尺码	发货人	收件人地址、电话	快递	备注	运单编号
+        //鞋款图片	状态	快递运单编号 尺码	发货人收件人地址、电话	快递运单编号	退换地址
         for (int i = 0; i < exportOrder.size(); i++) {
             sheet.setRowView(i + 1, 2400);//设置高度
             Info order = exportOrder.get(i);
+            //日期
             Label date = new Label(0, i + 1, order.getDate(),commonFormat);
+            //图片
             WritableImage image = new WritableImage(1, i + 1, 1, 1, order.getImage());
-            Label size = new Label(2, i + 1, order.getSize(),commonFormat);
-            Label sender = new Label(3, i + 1, order.getSender(),commonFormat);
-            Label address = new Label(4, i + 1, order.getAddress(),commonFormat);
-            Label tel = new Label(5, i + 1, order.getTel(),commonFormat);
-            Label express = new Label(6, i + 1, order.getExpress(),commonFormat);
-            Label remark = new Label(7, i + 1, order.getRemark(),commonFormat);
-            Label number = new Label(8, i + 1, order.getNumber(),commonFormat);
-
+            //状态
+            Label state = new Label(2, i + 1, order.getState(),commonFormat);
+            //尺码
+            Label size = new Label(3, i + 1, order.getSize(),commonFormat);
+            //发货人收件人地址、电话
+            Label sender = new Label(4, i + 1, order.getAddress(),commonFormat);
+            //快递运单编号
+            Label number = new Label(5, i + 1, order.getNumber(),commonFormat);
+            //退换地址
+            Label tuihuoAdd = new Label(6, i + 1, order.getTuiAddress(),commonFormat);
+//            Label tel = new Label(5, i + 1, order.getTel(),commonFormat);
+//            Label express = new Label(6, i + 1, order.getExpress(),commonFormat);
+//            Label remark = new Label(7, i + 1, order.getRemark(),commonFormat);
+//            Label number = new Label(8, i + 1, order.getNumber(),commonFormat);
 
             sheet.addCell(date);
             sheet.addImage(image);
+            sheet.addCell(state);
             sheet.addCell(size);
             sheet.addCell(sender);
-            sheet.addCell(address);
-            sheet.addCell(tel);
-            sheet.addCell(express);
-            sheet.addCell(remark);
             sheet.addCell(number);
+            sheet.addCell(tuihuoAdd);
+//            sheet.addCell(tel);
+//            sheet.addCell(remark);
+//            sheet.addCell(number);
 
             Toast.makeText(context, "写入成功", Toast.LENGTH_LONG).show();
             //弹框
